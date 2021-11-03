@@ -1,5 +1,5 @@
 
-C_FILES = 	srcs/ft_putchar.c\
+C_FILES =	srcs/ft_putchar.c\
  			srcs/ft_putstr.c\
 			srcs/ft_strlen.c\
 			srcs/ft_toupper.c\
