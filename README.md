@@ -1,1 +1,1 @@
-# Hive-libft
+# Tests for Hive-libft project
