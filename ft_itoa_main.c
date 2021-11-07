@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	int n = -123;
+	int n = -5859;
 	int max = 2147483647;
 	int min = -2147483648;
 
@@ -15,6 +15,12 @@ int main(void)
 	printf("%s\n", mx);
 	printf("%s\n", mn);
 
+	while (*nb != '\0')
+	{
+		printf("(%c)", *nb);
+		nb++;
+	}
+	printf("\n");
 	while (*mx != '\0')
 	{
 		printf("(%c)", *mx);
