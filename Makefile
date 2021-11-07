@@ -10,10 +10,10 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_isascii.c\
 			srcs/ft_isdigit.c\
 			srcs/ft_isprint.c\
-			srcs/ft_putnbr.c\
 			srcs/ft_strclr.c\
 			srcs/ft_tolower.c\
 			srcs/ft_strequ.c\
+			srcs/ft_atoi.c
 
 
 HEADER = srcs/
@@ -32,5 +32,8 @@ ft_putendl:
 
 ft_strequ:
 	gcc -Wall -Wextra -Werror ft_strequ_main.c $(C_FILES) -I$(HEADER)
+
+ft_atoi:
+	gcc -Wall -Wextra -Werror ft_atoi_main.c $(C_FILES) -I$(HEADER)
 	
 
