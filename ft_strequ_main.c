@@ -3,18 +3,24 @@
 
 int main(void)
 {
-	char const *s1 = "ABC";
-	char const *s2 = "ABC";
+	char const *ABC_1 = "ABC";
+	char const *ABC_2 = "ABC";
+	char const *NULL1 = NULL;
+	char const *ABCD = "ABCD";
+	char const *BBC = "BBC";
+	char const *NULL2 = NULL;
+	char const empty[] = "";
+	char uninit1[0];
+	char uninit2[0];
 
-	char const *s3 = "";
-	char const *s4 = "ABCD";
-	char const *s5 = "BBC";
-
-	printf("identical: %d\n", ft_strequ(s1, s2));
-	printf("not identical: %d\n", ft_strequ(s1, s3));
-	printf("not identical: %d\n", ft_strequ(s1, s4));
-	printf("not identical: %d\n", ft_strequ(s1, s5));
-
+	printf("identical: %d\n", ft_strequ(ABC_1, ABC_2));
+	printf("not identical: %d\n", ft_strequ(ABC_1, NULL1));
+	printf("not identical: %d\n", ft_strequ(ABC_1, ABCD));
+	printf("not identical: %d\n", ft_strequ(ABC_1, BBC));
+	printf("identical: %d\n", ft_strequ(NULL1, NULL2));
+	printf("not identical: %d\n", ft_strequ(NULL1, uninit1));
+	printf("?? identical: %d\n", ft_strequ(NULL1, empty));
+	printf("identical: %d\n", ft_strequ(uninit1, uninit2));
 	return (0);
 }
 
