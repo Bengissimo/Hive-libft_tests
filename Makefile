@@ -15,7 +15,8 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_strequ.c\
 			srcs/ft_atoi.c\
 			srcs/ft_itoa.c\
-			srcs/ft_strdup.c
+			srcs/ft_strdup.c\
+			srcs/ft_strnew.c
 
 
 HEADER = srcs/
@@ -43,5 +44,8 @@ ft_itoa:
 
 ft_strdup:
 	@gcc -Wall -Wextra -Werror ft_strdup_main.c $(C_FILES) -I$(HEADER)
+
+ft_strnew:
+	@gcc -Wall -Wextra -Werror ft_strnew_main.c $(C_FILES) -I$(HEADER)
 	
 
