@@ -16,8 +16,8 @@ int main(void)
 	printf("libc: %d ft: %d\n", strcmp(s1, s4), ft_strcmp(s1, s4));
 
 	printf("strncmp vs ft_strncmp\n");
-	printf("libc: %d ft: %d\n", strncmp(s1, s2, 2), ft_strncmp(s1, s2, 2));
-	printf("libc: %d ft: %d\n", strncmp(s1, s3, 2), ft_strncmp(s1, s3, 2));
-	printf("libc: %d ft: %d\n", strncmp(s1, s4, 2), ft_strncmp(s1, s4, 2));
+	printf("libc: %d ft: %d\n", strncmp(s1, s2, 2), ft_strncmp(s1, s2, 10));
+	printf("libc: %d ft: %d\n", strncmp(s1, s3, 2), ft_strncmp(s1, s3, 200));
+	printf("libc: %d ft: %d\n", strncmp(s1, s4, 2), ft_strncmp(s1, s4, 200));
 	return (0);
 }
