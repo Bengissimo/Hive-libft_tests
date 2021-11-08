@@ -16,7 +16,9 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_atoi.c\
 			srcs/ft_itoa.c\
 			srcs/ft_strdup.c\
-			srcs/ft_strnew.c
+			srcs/ft_strnew.c\
+			srcs/ft_strsub.c\
+			srcs/ft_strjoin.c
 
 
 HEADER = srcs/
@@ -48,4 +50,8 @@ ft_strdup:
 ft_strnew:
 	@gcc -Wall -Wextra -Werror ft_strnew_main.c $(C_FILES) -I$(HEADER)
 	
+ft_strsub:
+	@gcc -Wall -Wextra -Werror ft_strsub_main.c $(C_FILES) -I$(HEADER)
 
+ft_strjoin:
+	@gcc -Wall -Wextra -Werror ft_strjoin_main.c $(C_FILES) -I$(HEADER)
