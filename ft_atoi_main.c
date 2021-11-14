@@ -7,16 +7,16 @@ int main(void)
 	const char *s1 = " 0";
 	const char *s2 = "  0";
 	const char *s3 = "   0";
-	const char *s4 = "+0";
+	const char *s4 = "+ 1";
 	const char *s5 = "++0";
 	const char *s6 = " +0";
-	const char *s7 = "-1";
+	const char *s7 = "-1 1";
 	const char *s8 = "--1";
 	const char *s9 = " -0";
 	const char *max = "+2147483647";
 	const char *min = "-2147483648";
-	const char *s10 = " ?0";
-	const char *s11 = " + 0";
+	const char *s10 = " ?1";
+	const char *s11 = " + 1";
 
 
 	

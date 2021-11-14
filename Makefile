@@ -21,7 +21,20 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_strjoin.c\
 			srcs/ft_strtrim.c\
 			srcs/ft_strcmp.c\
-			srcs/ft_strncmp.c
+			srcs/ft_strncmp.c\
+			srcs/ft_strcpy.c\
+			srcs/ft_strncpy.c\
+			srcs/ft_putchar_fd.c\
+			srcs/ft_putstr_fd.c\
+			srcs/ft_putendl_fd.c\
+			srcs/ft_putnbr_fd.c\
+			srcs/ft_memalloc.c\
+			srcs/ft_bzero.c\
+			srcs/ft_striter.c\
+			srcs/ft_striteri.c\
+			srcs/ft_memcpy.c\
+			srcs/ft_memmove.c\
+			srcs/ft_memchr.c
 
 
 HEADER = srcs/
@@ -64,3 +77,15 @@ ft_strtrim:
 
 ft_strcmp:
 	@gcc -Wall -Wextra -Werror ft_strcmp_main.c $(C_FILES) -I$(HEADER)
+
+ft_striter:
+	@gcc -Wall -Wextra -Werror ft_striter_main.c $(C_FILES) -I$(HEADER)
+
+ft_memmove:
+	@gcc -Wall -Wextra -Werror ft_memmove_main.c $(C_FILES) -I$(HEADER)
+
+ft_memchr:
+	@gcc -Wall -Wextra -Werror ft_memchr_main.c $(C_FILES) -I$(HEADER)
+
+
+
