@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ_main.c                                   :+:      :+:    :+:   */
+/*   ft_memdel_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 14:05:49 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/16 14:37:01 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/16 11:06:41 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/16 11:06:43 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
+static void check_print(char **str)
+{
+	if (*str == NULL)
+		printf("no c return is NULL\n");
+	else
+    {
+        printf("%s\n", str[0]);
+        printf("%s\n", str[1]);
+    }
+}
+
 int main(void)
 {
-	char const *ABC = "ABC";
+    char *ptr[2];
+    char str[10] = "abc";
+    char str2[10] = "def";
+    ptr[0] = str;
+    ptr[1] = str2;
 
-	printf("ABC vs ABC		%d\n", ft_strequ(ABC, "ABC"));
-	printf("NUL vs NUL		%d\n", ft_strequ(NULL, NULL));
-	printf("ABC vs empty		%d\n", ft_strequ(ABC, ""));
-	printf("ABC vs NULL		%d\n", ft_strequ(ABC, NULL));
-	printf("ABC vs ABB		%d\n", ft_strequ(ABC, "ABB"));
-	printf("ABC vs BBC		%d\n", ft_strequ(ABC, "BBC"));
-	printf("ABC vs ABCA		%d\n", ft_strequ(ABC, "ABCA"));
-	printf("ABC vs AB		%d\n", ft_strequ(ABC, "AB"));
-
-	return (0);
+    check_print(ptr);
+    ft_memdel((void **)ptr);
+    check_print(ptr);
+    return (0);
 }

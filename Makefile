@@ -13,6 +13,7 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_strclr.c\
 			srcs/ft_tolower.c\
 			srcs/ft_strequ.c\
+			srcs/ft_strnequ.c\
 			srcs/ft_atoi.c\
 			srcs/ft_itoa.c\
 			srcs/ft_strdup.c\
@@ -41,7 +42,11 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_strlcat.c\
 			srcs/ft_strchr.c\
 			srcs/ft_strrchr.c\
-			srcs/ft_strstr.c
+			srcs/ft_strstr.c\
+			srcs/ft_strnstr.c\
+			srcs/ft_memdel.c\
+			srcs/ft_strmap.c\
+			srcs/ft_strmapi.c
 
 
 HEADER = srcs/
@@ -60,6 +65,9 @@ ft_putendl:
 
 ft_strequ:
 	@gcc -Wall -Wextra -Werror ft_strequ_main.c $(C_FILES) -I$(HEADER)
+
+ft_strnequ:
+	@gcc -Wall -Wextra -Werror ft_strnequ_main.c $(C_FILES) -I$(HEADER)
 
 ft_atoi:
 	@gcc -Wall -Wextra -Werror ft_atoi_main.c $(C_FILES) -I$(HEADER)
@@ -114,4 +122,16 @@ ft_strrchr:
 
 ft_strstr:
 	@gcc -Wall -Wextra -Werror ft_strstr_main.c $(C_FILES) -I$(HEADER)
+
+ft_strnstr:
+	@gcc -Wall -Wextra -Werror ft_strnstr_main.c $(C_FILES) -I$(HEADER)
+
+ft_memdel:
+	@gcc -Wall -Wextra -Werror ft_memdel_main.c $(C_FILES) -I$(HEADER)
+
+ft_strmap:
+	@gcc -Wall -Wextra -Werror ft_strmap_main.c $(C_FILES) -I$(HEADER)
+
+ft_strmapi:
+	@gcc -Wall -Wextra -Werror ft_strmapi_main.c $(C_FILES) -I$(HEADER)
 

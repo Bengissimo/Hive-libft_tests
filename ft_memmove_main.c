@@ -44,7 +44,6 @@ int main()
 	//ft_memcpy( str2 + 4, str2 + 2, 3 );
 	printf( "Destination_after:\t%s\n", str2 + 4 );
     printf( "str2:\t\t%s\n", str2);
-	
-	
+
 	return 0;
 }
