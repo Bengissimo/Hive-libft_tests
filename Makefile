@@ -34,7 +34,14 @@ C_FILES =	srcs/ft_putchar.c\
 			srcs/ft_striteri.c\
 			srcs/ft_memcpy.c\
 			srcs/ft_memmove.c\
-			srcs/ft_memchr.c
+			srcs/ft_memchr.c\
+			srcs/ft_memcmp.c\
+			srcs/ft_strcat.c\
+			srcs/ft_strncat.c\
+			srcs/ft_strlcat.c\
+			srcs/ft_strchr.c\
+			srcs/ft_strrchr.c\
+			srcs/ft_strstr.c
 
 
 HEADER = srcs/
@@ -87,5 +94,24 @@ ft_memmove:
 ft_memchr:
 	@gcc -Wall -Wextra -Werror ft_memchr_main.c $(C_FILES) -I$(HEADER)
 
+ft_memcmp:
+	@gcc -Wall -Wextra -Werror ft_memcmp_main.c $(C_FILES) -I$(HEADER)
 
+ft_strcat:
+	@gcc -Wall -Wextra -Werror ft_strcat_main.c $(C_FILES) -I$(HEADER)
+
+ft_strncat:
+	@gcc -Wall -Wextra -Werror ft_strncat_main.c $(C_FILES) -I$(HEADER)
+
+ft_strlcat:
+	@gcc -Wall -Wextra -Werror ft_strlcat_main.c $(C_FILES) -I$(HEADER)
+
+ft_strchr:
+	@gcc -Wall -Wextra -Werror ft_strchr_main.c $(C_FILES) -I$(HEADER)
+
+ft_strrchr:
+	@gcc -Wall -Wextra -Werror ft_strrchr_main.c $(C_FILES) -I$(HEADER)
+
+ft_strstr:
+	@gcc -Wall -Wextra -Werror ft_strstr_main.c $(C_FILES) -I$(HEADER)
 
