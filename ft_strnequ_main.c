@@ -6,29 +6,36 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:05:37 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/16 14:38:56 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:36:19 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
+static void strnequ_test(char const *s1, char const *s2)
+{
+	for (int i = 1; i < 8; i++)
+	{
+		if (ft_strnequ(s1, s2, i) == 1)
+		{	
+			printf("%d chars of %s vs %s equal\n", i, s1, s2);
+		}
+		else
+			printf("%d chars of %s vs %s NOT equal\n", i, s1, s2);
+	}
+}
+
 int main(void)
 {
-	char const *ABC = "ABC";
-
-	printf("ABC vs ABC		%d\n", ft_strnequ(ABC, "ABC", 1));
-	printf("ABC vs ABC		%d\n", ft_strnequ(ABC, "ABC", 2));
-	printf("ABC vs ABC		%d\n", ft_strnequ(ABC, "ABC", 3));
-	printf("ABC vs ABC		%d\n", ft_strnequ(ABC, "ABC", 4));
-	printf("NUL vs NUL		%d\n", ft_strnequ(NULL, NULL, 1));
-	printf("ABC vs empty		%d\n", ft_strnequ(ABC, "", 1));
-	printf("ABC vs NULL		%d\n", ft_strnequ(ABC, NULL, 3));
-	printf("ABC vs ABB		%d\n", ft_strnequ(ABC, "ABB", 3));
-	printf("ABC vs BBC		%d\n", ft_strnequ(ABC, "BBC", 3));
-	printf("ABC vs ABCA		%d\n", ft_strnequ(ABC, "ABCA", 1));
-	printf("ABC vs AB		%d\n", ft_strnequ(ABC, "AB", 2));
-
+	strnequ_test("abc", "abc");
+	strnequ_test("abc", "");
+	strnequ_test("abc", "a");
+	strnequ_test("abc", "ab");
+	strnequ_test("abc", "abb");
+	strnequ_test("abc", "abcabc");
+	strnequ_test("abc", NULL);
+	strnequ_test(NULL, NULL);
 	return (0);
 }
 
