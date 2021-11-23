@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat_main.c                                  :+:      :+:    :+:   */
+/*   ft_strclr_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:38:46 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/22 21:18:54 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/19 11:59:15 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 12:08:21 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	strlcat_test(size_t size)
+static void print_chars(char *str, int size)
 {
-	int ft_i;
-	int i;
-	
-	char ft_s[20] = "ABC";
-	char s[20] = "ABC";
-	ft_i = ft_strlcat(ft_s, "12345", size);
-	i = strlcat(s, "12345", size);
-	if (ft_i != i || ft_strequ(ft_s, s) != 1)
+	for (int i = 0; i < size; i++)
 	{
-		printf("dstsize %zu:[KO], ft_s: %s, s: %s\n", size, ft_s, s);
-		return (0);
+		printf("(%c)", str[i]);
 	}
-	return (1);
+	printf("\n");
 }
 
 int main(void)
 {
-	
-	char ft_s[20] = "ABC";
-	ft_strlcat(ft_s, "12345", 3);
-	printf("%s\n", ft_s);
-	
-	for (int i = 0; i < 20; i++)
+	char *str = ft_memalloc(10);
+	ft_memset(str, 'b', 10);
+	print_chars(str, 10);
+	ft_strclr(str);
+	for (int i = 0; i < 10; i++)
 	{
-		if (strlcat_test(i) != 1)
+		if(str[i] != '\0')
+		{
+			printf("[KO]\n");
 			return (1);
+		}
 	}
+	print_chars(str, 10);
 	printf("[OK]\n");
 	return (0);
 }

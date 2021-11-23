@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr_main.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 15:39:18 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/19 11:32:23 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/19 21:22:48 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 21:23:58 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,33 @@
 
 int main(void)
 {
-	char end[30] = "This string has a c";
-	char start[30] = "c is here at the start";
-	char mid[30] = "look at the c in the middle";
-	char not[30] = "no no no no no no";
+	char *abc = "abc";
+	char *abc_ = "abc_";
 
-	if (ft_memchr(end, 'c', ft_strlen(end)) != memchr(end, 'c', ft_strlen(end)))
+	char *s1 = "\0";
+	char *s2 = "\200";
+
+	char *s3 = "";
+	char *s4 = "";
+
+	if (ft_strncmp(abc, abc, 5) != strncmp(abc, abc, 5))
 	{
-		printf("end[KO]\n");
+		printf(" abc vs abc [KO]\n");
 		return (1);
 	}
-	if (ft_memchr(start, 'c', ft_strlen(start)) != memchr(start, 'c', ft_strlen(start)))
+	if (ft_strncmp(abc, abc_, 3) != strncmp(abc, abc_ ,3))
 	{
-		printf("start[KO]\n");
+		printf(" abc vs abc_ [KO]\n");
 		return (1);
 	}
-	if (ft_memchr(mid, 'c', ft_strlen(mid)) != memchr(mid, 'c', ft_strlen(mid)))
+	if (ft_strncmp(s1, s2, 1) != strncmp(s1, s2, 1))
 	{
-		printf("mid[KO]\n");
+		printf(" \\0 vs \\200 [KO]\n");
 		return (1);
 	}
-	if (ft_memchr(not, 'c', ft_strlen(not)) != memchr(not, 'c', ft_strlen(not)))
+	if (ft_strncmp(s3, s4, 1) != strncmp(s3, s4, 1))
 	{
-		printf("not[KO]\n");
+		printf(" empty vs empty [KO]\n");
 		return (1);
 	}
 	printf("[OK]\n");

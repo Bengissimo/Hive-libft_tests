@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat_main.c                                  :+:      :+:    :+:   */
+/*   ft_isalpha_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:38:46 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/22 21:18:54 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/18 11:39:38 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/18 11:44:01 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	strlcat_test(size_t size)
-{
-	int ft_i;
-	int i;
-	
-	char ft_s[20] = "ABC";
-	char s[20] = "ABC";
-	ft_i = ft_strlcat(ft_s, "12345", size);
-	i = strlcat(s, "12345", size);
-	if (ft_i != i || ft_strequ(ft_s, s) != 1)
-	{
-		printf("dstsize %zu:[KO], ft_s: %s, s: %s\n", size, ft_s, s);
-		return (0);
-	}
-	return (1);
-}
-
 int main(void)
 {
-	
-	char ft_s[20] = "ABC";
-	ft_strlcat(ft_s, "12345", 3);
-	printf("%s\n", ft_s);
-	
-	for (int i = 0; i < 20; i++)
+	char ascii[128];
+	ft_bzero(ascii, 128);
+	for (int i = 0; i < 128; i++)
 	{
-		if (strlcat_test(i) != 1)
+		ascii[i] = i;
+	}
+
+	for (int i = 'A'; i <= 'Z'; i++)
+	{
+		if (ft_isalpha(ascii[i]) != 1)
+		{
+			printf("[%d][%c][[KO]\n", i, ascii[i]);
 			return (1);
+		}
+	}
+
+	for (int i = 'a'; i <= 'z'; i++)
+	{
+		if (ft_isalpha(ascii[i]) != 1)
+		{
+			printf("[%d][%c][[KO]\n", i, ascii[i]);
+			return (1);
+		}
 	}
 	printf("[OK]\n");
 	return (0);

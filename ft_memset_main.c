@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp_main.c                                   :+:      :+:    :+:   */
+/*   ft_memset_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 21:22:30 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/19 21:22:34 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/19 09:57:51 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 10:15:42 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,37 @@
 #include <stdio.h>
 #include <string.h>
 
+static void print_chars(char *str, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		printf("(%c)", str[i]);
+	}
+	printf("\n");
+}
+
 int main(void)
 {
-	char *abc = "abc";
-	char *abc_ = "abc_";
-
-	char *s1 = "\0";
-	char *s2 = "\200";
-
-	char *s3 = "";
-	char *s4 = "";
-
-	if (ft_strcmp(abc, abc) != strcmp(abc, abc))
+	char *b1;
+	char *b2;
+	
+	b1 = ft_memalloc(10);
+	b2 = ft_memalloc(10);
+	printf("Before:\n");
+	printf("b1:	");
+	print_chars(b1, 10);
+	printf("b2:	");
+	print_chars(b2, 10);
+	if (ft_strequ(ft_memset(b1, 'b', 10), memset(b2, 'b', 10)) != 1)
 	{
-		printf(" abc vs abc [KO]\n");
+		printf("[KO]\n");
 		return (1);
 	}
-	if (ft_strcmp(abc, abc_) != strcmp(abc, abc_))
-	{
-		printf(" abc vs abc_ [KO]\n");
-		return (1);
-	}
-	if (ft_strcmp(s1, s2) != strcmp(s1, s2))
-	{
-		printf(" \\0 vs \\200 [KO]\n");
-		return (1);
-	}
-	if (ft_strcmp(s3, s4) != strcmp(s3, s4))
-	{
-		printf(" empty vs empty [KO]\n");
-		return (1);
-	}
+	printf("After:\n");
+	printf("ft_memset:	");
+	print_chars(b1, 10);
+	printf("memset:		");
+	print_chars(b2, 10);
 	printf("[OK]\n");
 	return (0);
 }

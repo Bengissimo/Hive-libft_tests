@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp_main.c                                   :+:      :+:    :+:   */
+/*   ft_memalloc_main.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:14:46 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/18 23:12:36 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/18 14:01:41 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/18 22:21:40 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-int main()
+static void	null_check(char *s, int size)
 {
-    char a[1] = { 128 };
-    char b[1] = { 0 };
-	char c[1] = { 0 };
-	char d[0];
-	char e[0];
-    
-	if (ft_memcmp(a, b, 1) != memcmp(a, b, 1) ||
-		ft_memcmp(b, c, 1) != memcmp(b, c, 1) ||
-		ft_memcmp(d, e, 0) != ft_memcmp(d, e, 0))
-	{	
-		printf("[KO]\n");
-		return (1);
+	/* Return if the element is not NULL */
+	for (int i = 0; i < size; i++)
+	{
+		if (s[i] != '\0')
+		{
+			printf("[%d][KO]\n", i);
+			return ;
+		}
 	}
 	printf("[OK]\n");
-    return (0);
+	return ;
+}
+
+int main(void)
+{
+	char *s1;
+	char *s2;
+	
+	s1 = ft_memalloc(10);
+	s2 = ft_memalloc(-1);
+	if (s2 == NULL)
+		printf("NULL check ok\n");
+	null_check(s1, 10);
+	free(s1);
+	return (0);
 }

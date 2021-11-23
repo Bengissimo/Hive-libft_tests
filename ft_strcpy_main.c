@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp_main.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:14:46 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/18 23:12:36 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/19 11:45:52 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 11:54:42 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-int main()
+int	main(void)
 {
-    char a[1] = { 128 };
-    char b[1] = { 0 };
-	char c[1] = { 0 };
-	char d[0];
-	char e[0];
-    
-	if (ft_memcmp(a, b, 1) != memcmp(a, b, 1) ||
-		ft_memcmp(b, c, 1) != memcmp(b, c, 1) ||
-		ft_memcmp(d, e, 0) != ft_memcmp(d, e, 0))
-	{	
+	char *dst1;
+	char *dst2;
+	
+	dst1 = ft_memalloc(25);
+	dst2 = ft_memalloc(25);
+	if (ft_strequ(ft_strcpy(dst1, "Hello world"), strcpy(dst2, "Hello world")) != 1)
+	{
 		printf("[KO]\n");
-		return (1);
+		return (0);
 	}
-	printf("[OK]\n");
-    return (0);
+	printf("dst1: %s\n[OK]\n", dst1);
+	free(dst1);
+	free(dst2);
+	return (0);
 }

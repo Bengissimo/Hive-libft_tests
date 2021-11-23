@@ -5,53 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 09:55:56 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/11 10:57:16 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/19 14:48:51 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 16:49:45 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	putendl(char *s)
-{
-	ft_putstr(s);
-	ft_putchar('\n');
-	return ;
-}
+#include <stdio.h>
 
 void	underscore(char *s)
 {
-	if (s[0] == ' ')
-		s[0] = '_';
-}
-
-void fn(unsigned int i, char *s)
-{
-	ft_putnbr(i);
-	ft_putchar(' ');
-	ft_putchar(s[0]);
-	ft_putchar('\n');
+	if (!s)
+		return ;
+	*s = ('_');
 }
 
 int main(void)
 {
-	char s[3];
-
-	s[0] = 'a';
-	s[1] = 'b';
-	s[2] = 'c';
-	
-	/*ft_striter(s, &putendl);
-	ft_putstr(s);
-	ft_putchar('\n');
-	ft_striter(s, &underscore);
-	ft_putstr(s);
-	ft_putchar('\n');*/
-
-	ft_putstr(s);
-	ft_putchar('\n');
-	ft_striteri(s, &fn);
-	ft_putstr(s);
-	ft_putchar('\n');
+	char *A = ft_memalloc(20);
+	ft_memset(A, 'A', 10);
+	ft_putendl(A);
+	ft_striter(A, &underscore);
+	for (int i = 0; i < 10; i++)
+	{
+		if(A[i] != '_')
+		{
+			printf("[KO]\n");
+			return (1);
+		}
+	}
+	ft_putendl(A);
+	printf("[OK]\n");
 	return (0);
 }

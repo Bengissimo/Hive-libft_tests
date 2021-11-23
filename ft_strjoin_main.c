@@ -1,19 +1,48 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin_main.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 15:44:02 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/19 16:09:27 by bkandemi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <stdio.h>
 
 int main(void)
 {
 	char *hello = "Hello";
 	char *world = "world";
+	char *space = " ";
 	char *empty = "";
-	
-	char *hello_world = ft_strjoin(hello, world);
-	char *hello_empty = ft_strjoin(hello, empty);
-	char *empty_world = ft_strjoin(empty, world);
+	char *joined = ft_strjoin(hello, space);
 
-	printf("Helloworld: %s\n", hello_world);
-	printf("Hello: %s\n", hello_empty);
-	printf("world: %s\n", empty_world);
-
+	if (ft_strjoin(hello, NULL) != NULL || ft_strjoin(NULL, hello) != NULL)
+	{
+		printf("not protected\n");
+	}
+	if (ft_strequ(joined, "Hello ") != 1)
+	{
+		printf("Hello + space[KO]\n");
+		return (1);
+	}
+	joined = ft_strjoin(joined, world);
+	if (ft_strequ(joined, "Hello world") != 1)
+	{
+		printf("Hello + world[KO]\n");
+		return (1);
+	}
+	joined = ft_strjoin(joined, empty);
+	if (ft_strequ(joined, "Hello world") != 1)
+	{
+		printf("Hello world + empty[KO]\n");
+		return (1);
+	}
+	ft_putendl(joined);
+	ft_putendl("[OK]");
 	return (0);
 }
