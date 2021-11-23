@@ -1,0 +1,6 @@
+#!/bin/sh
+
+HEADER=srcs/
+C_FILES=srcs/*.c
+
+gcc -Wall -Wextra -Werror ft_$1_main.c ${C_FILES} -I${HEADER} && ./a.out
