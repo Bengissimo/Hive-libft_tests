@@ -6,7 +6,7 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:06:41 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/19 09:37:56 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:41:42 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(void)
 
 	char *str = "Hello world";
 	dup = ft_strdup(str);
+	printf("Before ft_memdel: ");
     check_print(dup);
     ft_memdel((void **)&dup);
 	if (dup != NULL)
@@ -36,6 +37,8 @@ int main(void)
 		printf("[KO]\n");
 		return (1);
 	}
+	printf("After ft_memdel: ");
 	check_print(dup);
+	printf("[OK]\n");
     return (0);
 }

@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero_main.c                                    :+:      :+:    :+:   */
+/*   ft_strdup_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 10:12:17 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/24 21:22:36 by bkandemi         ###   ########.fr       */
+/*   Created: 2021/11/24 21:27:24 by bkandemi          #+#    #+#             */
+/*   Updated: 2021/11/24 21:30:39 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
-void test_bzero(char *s1, char *s2)
+int	main(void)
 {
-	for (int i = 0; i <=10; i+=5)
+	if(ft_strequ(ft_strdup("Hello world\n"), strdup("Hello world\n")) != 1)
 	{
-		ft_bzero(s1, 10);
-		bzero(s2, 10);
-		if (ft_strnequ(s1, s2, i) != 1)
-		{	
-			printf("%d [KO]\n", i);
-			return ;
-		}	
+		printf("[KO]\n");
+		return (1);
 	}
 	printf("[OK]\n");
-}
-
-int		main(void)
-{
-	char *ft_s;
-	char *s;
-	ft_s = ft_memalloc(10);
-	ft_s = ft_memset(ft_s, 'a', 10);
-	s = ft_memalloc(10);
-	s = ft_memset(s, 'b', 10);
-	test_bzero(ft_s, s);
 	return (0);
 }

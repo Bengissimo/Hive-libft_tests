@@ -6,7 +6,7 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:35:29 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/17 16:59:06 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:52:23 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int main(void)
 {
 	test_putstr_fd("putstr_fd_TEST.txt", "hello ");
 	test_putstr_fd("putstr_fd_TEST.txt", "world\n");
-
 	return (0);
 }
