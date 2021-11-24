@@ -6,7 +6,7 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:09:09 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/23 15:11:35 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/23 22:46:15 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 #include <ctype.h>
 #include "libft.h"
 
-
 int main(void)
 {
-	int _A = 'A';
-	int eight = '8';
-
-	
-	if (tolower(_A) != ft_tolower(_A))
+	if (tolower('A') != ft_tolower('A'))
 	{
-		printf("%c [KO]\n", _A);
+		printf("'A' [KO]\n");
 		return (1);
 	}
-	if (tolower(eight) != ft_tolower(eight))
+	if (tolower('@') != ft_tolower('@'))
 	{
-		printf("%c [KO]\n", eight);
+		printf("'@' [KO]\n");
+		return (1);
+	}
+	if (tolower('[') != ft_tolower('['))
+	{
+		printf("'[' [KO]\n");
+		return (1);
+	}
+	if (tolower(EOF) != ft_tolower(EOF))
+	{
+		printf("EOF [KO]\n");
 		return (1);
 	}
 	printf("[OK]\n");

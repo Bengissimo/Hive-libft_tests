@@ -6,7 +6,7 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:08:39 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/23 15:10:20 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/23 22:49:07 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,24 @@
 
 int main(void)
 {
-	int low_a = 'a';
-	int eight = '8';
-
-	
-	if (toupper(low_a) != ft_toupper(low_a))
+	if (toupper('a') != ft_toupper('a'))
 	{
-		printf("%c [KO]\n", low_a);
+		printf("'a' [KO]\n");
 		return (1);
 	}
-	if (toupper(eight) != ft_toupper(eight))
+	if (toupper('`') != ft_toupper('`'))
 	{
-		printf("%c [KO]\n", eight);
+		printf("'`' [KO]\n");
+		return (1);
+	}
+	if (toupper('{') != ft_toupper('{'))
+	{
+		printf("'{' [KO]\n");
+		return (1);
+	}
+	if (toupper(EOF) != ft_toupper(EOF))
+	{
+		printf("EOF [KO]\n");
 		return (1);
 	}
 	printf("[OK]\n");

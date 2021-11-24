@@ -3,4 +3,7 @@
 HEADER=srcs/
 C_FILES=srcs/*.c
 
-gcc -Wall -Wextra -Werror ft_$1_main.c ${C_FILES} -I${HEADER} && ./a.out | cat -e
+gcc -Wall -Wextra -Werror ft_$1_main.c ${C_FILES} -I${HEADER} && ./a.out
+
+#/usr/local/opt/llvm/bin/clang -fsanitize=leak ft_$1_main.c -Isrcs/ srcs/*.c
+#ASAN_OPTIONS=detect_leaks=1 ./a.out

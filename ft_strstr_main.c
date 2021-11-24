@@ -6,65 +6,51 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:27:01 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/15 21:42:02 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/24 12:17:02 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static void check_print(char *str)
-{
-	if (str == NULL)
-		printf("not found, NULL returned\n");
-	else
-		printf("%s\n", str);
-}
-
 int main(void)
 {
-	char *haystack = "Foo Bar Baz";
-	char *ptr1;
+	char *s1 = "foo foobar baz";
 
-	printf("ft_strstr:	");
-	ptr1 = ft_strstr(haystack, "x");
-	check_print(ptr1);
-	
-	printf("strstr:		");
-	ptr1 = strstr(haystack, "x");
-	check_print(ptr1);
+	if (ft_strequ(strstr(s1, "foobar"), ft_strstr(s1, "foobar")) != 1)
+	{
+		printf("searching 'foobar' in '%s'[KO]\n", s1);
+		return (1);
+	}
 
-	printf("ft_strstr:	");
-	ptr1 = ft_strstr(haystack, "");
-	check_print(ptr1);
+	if (ft_strequ(strstr(s1, "foo"), ft_strstr(s1, "foo")) != 1)
+	{
+		printf("searching 'foo' in '%s'[KO]\n", s1);
+		return (1);
+	}
 
-	printf("strstr:		");
-	ptr1 = strstr(haystack, "");
-	check_print(ptr1);
+	if (ft_strequ(strstr(s1, "f"), ft_strstr(s1, "f")) != 1)
+	{
+		printf("searching 'f' in '%s'[KO]\n", s1);
+		return (1);
+	}
 
-	printf("ft_strstr:	");
-	ptr1 = ft_strstr(haystack, "z");
-	check_print(ptr1);
+	if (ft_strequ(strstr(s1, "x"), ft_strstr(s1, "x")) != 1)
+	{
+		printf("searching 'x' in '%s'[KO]\n", s1);
+		return (1);
+	}
 
-	printf("strstr:		");
-	ptr1 = strstr(haystack, "z");
-	check_print(ptr1);
-
-	printf("ft_strstr:	");
-	ptr1 = ft_strstr(haystack, "oo");
-	check_print(ptr1);
-
-	printf("strstr:		");
-	ptr1 = strstr(haystack, "oo");
-	check_print(ptr1);
-
-	printf("ft_strstr:	");
-	ptr1 = ft_strstr(haystack, "ox");
-	check_print(ptr1);
-
-	printf("strstr:		");
-	ptr1 = strstr(haystack, "ox");
-	check_print(ptr1);
-
+	if (ft_strequ(strstr(s1, ""), ft_strstr(s1, "")) != 1)
+	{
+		printf("searching '' in '%s'[KO]\n", s1);
+		return (1);
+	}
+	if (ft_strequ(strstr(s1, "z"), ft_strstr(s1, "z")) != 1)
+	{
+		printf("searching 'z' in '%s'[KO]\n", s1);
+		return (1);
+	}
+	printf("[OK]\n");
 	return (0);
 }

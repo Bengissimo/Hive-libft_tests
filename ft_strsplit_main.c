@@ -6,12 +6,25 @@
 /*   By: bkandemi <bkandemi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 14:06:57 by bkandemi          #+#    #+#             */
-/*   Updated: 2021/11/23 14:49:52 by bkandemi         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:07:48 by bkandemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+static void free_array(char **array, int j)
+{
+	int i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
 
 int main(void)
 {
@@ -26,5 +39,6 @@ int main(void)
 		}
 	}
 	printf("[OK]\n");
+	free_array(array, 5);
 	return (0);
 }
