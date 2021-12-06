@@ -1,0 +1,7 @@
+#!/bin/sh
+
+HEADER=srcs/
+C_FILES=srcs/*.c
+
+/usr/local/opt/llvm/bin/clang -fsanitize=leak ft_$1_main.c -Isrcs/ srcs/*.c
+ASAN_OPTIONS=detect_leaks=1 ./a.out
