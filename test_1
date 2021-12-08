@@ -1,0 +1,11 @@
+#!/bin/sh
+
+HEADER=srcs/
+C_FILES=srcs/*.c
+
+
+for i in `ls part1/*_main.c`; do
+	echo $i
+	gcc -Wall -Wextra -Werror $i ${C_FILES} -I${HEADER} && ./a.out
+	echo ---------
+done
